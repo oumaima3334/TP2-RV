@@ -1,0 +1,17 @@
+Exercice 1
+1- Vector3.Distance(a,b) est un raccourci, il calcule le vecteur différence et puis sa norme , sinon ils donnent les mêmes résultats
+2- Vector3.sqrMagnitude renvoie la norme au carré (x² + y² + z²) sans calculer la racine carrée qui est  (x² + y² + z²). Pour comparer des distances, l'ordre est conservé donc il suffit de comparer au seuil au carré. C'est plus rapide.
+
+
+ 3- Avec 1000 objets, ça fait beaucoup de calculs à chaque image, donc le programme devient lent et le framerate baisse, ce qui est gênant en VR. En plus, on change la couleur et la taille de chaque objet à chaque frame  même quand rien ne change.
+
+Exercice 2
+1-On utilise le produit scalaire et les normes : cos(θ) = (a · b) / (||a|| × ||b||), puis θ = arccos(...). Vector3.Angle normalise les deux vecteurs puis calcule leur produit scalaire, applique arccos et convertit le résultat en degrés.
+2- Le composant TextMeshPro (3D) s'affiche directement comme un objet dans la scène, sans Canvas : on peut l'attacher au contrôleur et il suit la main. Le texte reste net quelle que soit la distance ou la taille.
+
+Exercice 3
+1-En bougeant la main gauche la position locale reste toujours la même (0, 0, 0.15) car le menu est un enfant de la main et il bouge avec elle. 
+
+2- L'enfant hérite des transformations du parent : quand la main tourne le panneau tourne autour d'elle et sa position dans le monde change alors que sa position locale ne change pas. 
+
+
